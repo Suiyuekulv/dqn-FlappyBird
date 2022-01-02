@@ -1,1 +1,1 @@
-# dqn-FlappyBird
+# ddqn-FlappyBird
