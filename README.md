@@ -1,3 +1,6 @@
-# double-deep-Q-network-FlappyBird
+# double-deep-Q-learning-FlappyBird
 
-Play the game 'Falppy Bird' using double deep Q learning network. This project is implemented by PyTorch.
+Play the game 'Falppy Bird' using double deep Q learning. The deep neural networks are implemented by PyTorch.
+
+## Introduction
+
