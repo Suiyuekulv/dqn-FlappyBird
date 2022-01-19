@@ -9,6 +9,7 @@ This prject creates an intelligent agent that automatically learns how to play t
 - Python 3.9
 - PyTorch 1.10.1
 - pygame
+- openCV
 
 ## Setup
 
