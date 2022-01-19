@@ -1,4 +1,4 @@
-# double-deep-Q-learning-FlappyBird
+# Playing FlappyBird with double deep Q learning
 
 Play the game 'Falppy Bird' using double deep Q learning. The deep neural networks are implemented by PyTorch.
 
