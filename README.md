@@ -31,9 +31,13 @@ _This program is to be run in Anaconda virtual environment._ Open Anaconda Promp
    conda install -c conda-forge opencv
    ```
 
-4. Clone the repository and run the program
+3. Clone the repository and run the program
    ```
    git clone https://github.com/yifanyin11/double-deep-Q-learning-FlappyBird.git
+   ```
+
+4. Run the program
+   ```
    cd double-deep-Q-learning-FlappyBird
    python ddqn_FlappyBird.py
    ```
