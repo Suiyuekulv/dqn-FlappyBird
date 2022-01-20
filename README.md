@@ -12,9 +12,7 @@ This prject creates an intelligent agent that automatically learns how to play t
 - OpenCV
 
 ## Setup
-_This program has been tested in Anaconda virtual environment._
-
-Open Anaconda Prompt and go to a prefered directory for the following setup.
+_This program has been tested in Anaconda virtual environment._ Open Anaconda Prompt and go to a prefered directory for the following setup:
  
 1. Install Torch from [PyTorch](https://pytorch.org/):
 
