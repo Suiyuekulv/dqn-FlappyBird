@@ -14,7 +14,7 @@ This prject creates an intelligent agent that automatically learns how to play t
 ## Setup
 _This program is to be run in Anaconda virtual environment._ Open Anaconda Prompt and go to a prefered directory for the following setup:
  
-1. Install Torch from [PyTorch](https://pytorch.org/):
+1. Install Torch from [PyTorch](https://pytorch.org/)
 
    _CUDA 11.3_
     ```
