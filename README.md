@@ -42,4 +42,4 @@ _This program is to be run in Anaconda virtual environment._ Open Anaconda Promp
    python ddqn_FlappyBird.py
    ```
 
-
+## Functions
