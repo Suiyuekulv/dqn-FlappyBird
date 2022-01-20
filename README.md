@@ -16,11 +16,11 @@ _This program is to be run in Anaconda virtual environment._ Open Anaconda Promp
  
 1. Install Torch from [PyTorch](https://pytorch.org/):
 
-   CUDA 11.3
+   _CUDA 11.3_
     ```
     conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
     ```
-   CPU
+   _CPU_
     ```
     conda install pytorch torchvision torchaudio cpuonly -c pytorch
     ```
