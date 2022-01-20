@@ -129,8 +129,29 @@ def train_dqn(game_state, arg):
         online_net.load_state_dict(checkpoint['online_net_state_dict'])
         target_net.load_state_dict(checkpoint['target_net_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-        replay_buffer = checkpoint['replay_buffer']
+        # replay_buffer = checkpoint['replay_buffer']
         epoch = checkpoint['epoch']+1
+        # get the first state by doing nothing and preprocess the image to 80x80x4
+        do_nothing = np.zeros(ACTIONS)
+        do_nothing[0] = 1
+
+        frame_t, r_t, terminal = game_state.frame_step(do_nothing)
+        state_t = update_state(frame_t, -1 * torch.ones(1, 4, 80, 80))
+
+        # fill replay buffer
+        for _ in range(MIN_REPLAY_SIZE):
+
+            # act greedily
+            action_index = online_net.act(state_t)
+            action_t = np.zeros([ACTIONS])
+            action_t[action_index] = 1
+
+            # one step forward
+            frame_t1, r_t, terminal = game_state.frame_step(action_t)
+            state_t1 = update_state(frame_t1, state_t)
+            replay_buffer.append((state_t, action_t, r_t, state_t1, terminal))
+            state_t = state_t1
+
         # # load results
         # result_data = torch.load('logs_ddqn/result.pt')
         # result1 = result_data['result1']
@@ -234,10 +255,10 @@ def train_dqn(game_state, arg):
                 'online_net_state_dict': online_net.state_dict(),
                 'target_net_state_dict': target_net.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
-                'replay_buffer': replay_buffer,
+                # 'replay_buffer': replay_buffer,
             }, PATH)
 
-        # terminate training after 200000 epochs and return results
+        # terminate training after 80000 epochs and return results
         if epoch % 80000 == 0:
             # torch.save({
             #     'result1': result1,
@@ -272,6 +293,30 @@ def greedy_playing(game_state):
         state_t1 = update_state(frame_t1, state_t)
         state_t = state_t1
 
+# # test
+#
+# # load general checkpoint
+# # instantiate two CNN
+# online_net = CNN()
+# target_net = CNN()
+# # allocate optimizer
+# optimizer = torch.optim.Adam(online_net.parameters(), lr=LEARNING_RATE)
+# loss_fn = nn.SmoothL1Loss(reduction='none')
+# checkpoint = torch.load(PATH)
+# online_net.load_state_dict(checkpoint['online_net_state_dict'])
+# target_net.load_state_dict(checkpoint['target_net_state_dict'])
+# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+# # replay_buffer = checkpoint['replay_buffer']
+# epoch = checkpoint['epoch']+1
+#
+# torch.save({
+#             'epoch': epoch,
+#             'online_net_state_dict': online_net.state_dict(),
+#             'target_net_state_dict': target_net.state_dict(),
+#             'optimizer_state_dict': optimizer.state_dict(),
+#             # 'replay_buffer': replay_buffer,
+#             }, PATH)
+
 # open up a game state to communicate with emulator
 game_state = game.GameState()
 
@@ -279,6 +324,9 @@ game_state = game.GameState()
 
 
 train_dqn(game_state, 'resume')
+
+
+
 
 # training result visualization
 # result1.popleft()
