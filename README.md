@@ -12,25 +12,25 @@ This prject creates an intelligent agent that automatically learns how to play t
 - OpenCV
 
 ## Setup
-_This program has been tested in Anaconda virtual environment._ Open Anaconda Prompt and go to a prefered directory for the following setup:
+_This program is to be run in Anaconda virtual environment._ Open Anaconda Prompt and go to a prefered directory for the following setup:
  
 1. Install Torch from [PyTorch](https://pytorch.org/):
 
-CUDA 11.3
-```
-conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
-```
-CPU
-```
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
-```
+ CUDA 11.3
+ ```
+ conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+ ```
+ CPU
+ ```
+ conda install pytorch torchvision torchaudio cpuonly -c pytorch
+ ```
 
 2. Install pygame
-```
-python3 -m pip install -U pygame --user
-```
+ ```
+ python3 -m pip install -U pygame --user
+ ```
 
 3. Install OpenCV
-```
-conda install -c conda-forge opencv
-```
+ ```
+ conda install -c conda-forge opencv
+ ```
