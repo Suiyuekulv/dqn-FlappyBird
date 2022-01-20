@@ -25,13 +25,9 @@ _This program is to be run in Anaconda virtual environment._ Open Anaconda Promp
     conda install pytorch torchvision torchaudio cpuonly -c pytorch
     ```
 
-2. Install pygame
+2. Install pygame and opencv
    ```
    python3 -m pip install -U pygame --user
-   ```
-
-3. Install OpenCV
-   ```
    conda install -c conda-forge opencv
    ```
 
