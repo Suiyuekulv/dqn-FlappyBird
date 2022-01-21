@@ -49,8 +49,6 @@ Convert current frame returned by the game emulator to a binary image, and stack
 
 &nbsp;
 
-&nbsp;
-
 _train_dqn(game_state, arg)_
 
 Core function in this program. 
