@@ -43,3 +43,12 @@ _This program is to be run in Anaconda virtual environment._ Open Anaconda Promp
    ```
 
 ## Functions
+_update_state(frame, state_t)_
+Convert current frame returned by the game emulator to a binary image, and stack it with the last three binary frames to form the new state.
+
+_train_dqn(game_state, arg)_
+Core function in this program. 
+
+Two training modes are available, controlled by argument _arg_. If _arg_=='start', training will restart. It will first go through an observation stage without updating networks. The agent will take random actions in this stage and store state transitions in the replay buffer, until _MIN_REPLAY_SIZE_ is reached. Then the function enters main training loop to iteratively updates action value function with an online network and a target network, by following the reinforcement learning scheme described in [1]. The weights of the online network will be copied to the target network every _TARGET_UPDATE_FREQ_ epochs. The network updates are performed by _torch.autograd_, the built-in differentiation engine of PyTorch. The latest model will be saved every 10000 iterations.
+
+If _arg_=='resume', training will be resumed from the last saved checkpoint. The greedy policy of the current online network will be used to fill the buffer up to _MIN_REPLAY_SIZE_. Training will continue after that.
