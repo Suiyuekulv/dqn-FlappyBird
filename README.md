@@ -47,6 +47,7 @@ _update_state(frame, state_t)_
 
 Convert current frame returned by the game emulator to a binary image, and stack it with the last three binary frames to form the new state.
 
+
 _train_dqn(game_state, arg)_
 
 Core function in this program. 
