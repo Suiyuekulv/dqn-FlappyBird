@@ -43,13 +43,13 @@ _This program is to be run in Anaconda virtual environment._ Open Anaconda Promp
    ```
 
 ## Functions
-_update_state(frame, state_t)_
+_**update_state(frame, state_t)**_
 
 Convert current frame returned by the game emulator to a binary image, and stack it with the last three binary frames to form the new state.
 
 &nbsp;
 
-_train_dqn(game_state, arg)_
+_**train_dqn(game_state, arg)**_
 
 Core function in this program. 
 
