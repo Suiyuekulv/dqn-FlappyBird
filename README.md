@@ -62,3 +62,16 @@ If _arg_=='resume', training will be resumed from the last saved checkpoint. The
 _**greedy_playing(game_state)**_
 
 Play the game under greedy policy, as given by current online network read from the last saved checkpoint.
+
+
+## Reference
+
+[1] Van Hasselt, H., Guez, A., & Silver, D. (2016, March). Deep reinforcement learning with double q-learning. In Proceedings of the AAAI conference on artificial intelligence (Vol. 30, No. 1).
+
+[2] Maim Lapan. Deep Reinforcement Learning Hands-On. Second Edition. Published by Packt Publishing Ltd.
+
+## Disclaimer
+
+The game emulator and some variable names are from the following repository:
+
+[yenchenlin/DeepLearningFlappyBird](https://github.com/yenchenlin/DeepLearningFlappyBird)
