@@ -72,6 +72,6 @@ Play the game under greedy policy, as given by current online network read from 
 
 ## Disclaimer
 
-The game emulator and some variable names are from the following repository:
+The game emulator is from the following repository:
 
 [yenchenlin/DeepLearningFlappyBird](https://github.com/yenchenlin/DeepLearningFlappyBird)
